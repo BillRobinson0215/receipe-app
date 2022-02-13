@@ -48,7 +48,6 @@ class Recipe extends Component {
       updateRecipes = () => {
         this.getRecipes(this.props.user.token).then(
           (recipes) => {
-            console.log(recipes)
             this.setState({ recipes: recipes.data.recipes })
           }
         )
@@ -73,13 +72,26 @@ class Recipe extends Component {
       }
     })
       .then((recipe) => this.state.recipes.push(recipe.data.recipe))
-      .then(() =>
+      .then(() => {
+        this.setState({
+          recipeName: '',
+          ingredients: [{ ingredientName: '', qty: '', units: '' }],
+          steps: ['']
+        })
         msgAlert({
           heading: 'Recipe Created',
           message: createRecipeSuccess,
           variant: 'success'
-        }))
+        })
+      })
       .catch((error) => {
+        this.setState({
+          recipeName: '',
+          ingredients: [
+            { ingredientName: '', qty: '', units: '' }
+          ],
+          steps: ['']
+        })
         msgAlert({
           heading: 'Failed to Create Recipe: ' + error.message,
           message: createRecipeFailure,
@@ -88,11 +100,11 @@ class Recipe extends Component {
       })
   }
 
-  consoleLog = (event) => {
-    event.preventDefault()
-    // this.handleUpdateFieldChange()
-    console.log(event)
-  }
+  // consoleLog = (event) => {
+  //   event.preventDefault()
+  //   // this.handleUpdateFieldChange()
+  //   console.log(event)
+  // }
 
   updateRecipe = (event) => {
     event.preventDefault()
@@ -108,13 +120,13 @@ class Recipe extends Component {
       }
     })
       .then(this.setState({ ingredientsToShow: this.state.updatedIngredients, stepsToShow: this.state.updatedSteps }))
-      .then(() =>
+      .then(() => {
         msgAlert({
           heading: 'Recipe Updated',
           message: updateRecipeSuccess,
           variant: 'success'
         })
-      )
+      })
       .then(this.componentDidMount())
   }
 
@@ -164,12 +176,10 @@ class Recipe extends Component {
           { ingredientName: '', qty: '', units: '' }
         ]
       })
-      console.log(this.state.updatedIngredients)
     }
 
    addStep = event => {
      event.preventDefault()
-     console.log(event)
      this.setState({
        steps: [
          ...this.state.steps,
@@ -180,7 +190,6 @@ class Recipe extends Component {
 
      addUpdatedStep = event => {
        event.preventDefault()
-       console.log(event.target.value)
        this.setState({
          updatedSteps: [
            ...this.state.updatedSteps,
@@ -209,7 +218,6 @@ class Recipe extends Component {
     }
 
   removeIngredient = index => {
-    console.log(index)
     this.state.ingredients.splice(index, 1)
     this.setState({
       ingredients: this.state.ingredients
@@ -217,7 +225,6 @@ class Recipe extends Component {
   }
 
     removeUpdateIngredient = index => {
-      console.log(index)
       this.state.updatedIngredients.splice(index, 1)
       this.setState({
         updatedIngredients: this.state.updatedIngredients
@@ -441,7 +448,6 @@ class Recipe extends Component {
                   <br />
                 </Form.Group>
                 <Button className='form-btn' variant='success' type='submit' onClick={this.createRecipe}>Submit</Button>
-                {/* <Button variant='success' type='submit' onClick={this.consoleLog}>console log</Button> */}
               </Form>
 
               {/* <h4>{this.collectionName}</h4> */}
