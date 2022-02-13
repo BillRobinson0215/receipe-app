@@ -27,7 +27,7 @@ Produce documentation on Github:
 Both front-end and back-end repos should include README's with:
 
 √ An explanation of the what the app does and how it works.
-X Complete the repository Description field and Website field with a meaningful sentence description of the application and link to the live URL github image
+√ Complete the repository Description field and Website field with a meaningful sentence description of the application and link to the live URL github image
 √ A link to the other repo
 √ A link to both deployed sites
 √ List of technologies used
@@ -43,15 +43,55 @@ X Complete the repository Description field and Website field with a meaningful 
 
 Your front-end repo's README should also have:
 
-X Link to wireframes and user stories
-X An embedded screenshot of the app
-X Set up and installation instructions for front end application
+√ Link to wireframes and user stories
+  √ WireFrame:
+      ![Imgur](https://imgur.com/yBrkM5C.png)
+
+  User Stories:
+    √ User must be able to sign up
+    √ User must be able to sign in
+    √ User must be able to sign out
+    √ User must be able to change password
+    √ User must be able to create a recipe
+    √ User must be able to view all their recipes
+    √ User must be able to view a recipe
+    √ User must be able to update a recipe
+    √ User must be able to delete a recipe
+    
+√ An embedded screenshot of the app
+  √Screen Shot: 
+    ![Imgur](https://imgur.com/rMvuhf8.png)
+
+√ Set up and installation instructions for front end application
+  √ Set Up:
+     Fork and clone repo
+     Navigate into repo
+     NPM install
+     NPM Start
 
 Your back-end repo's README should also have
 
-X Link to Entity Relationship Diagram (ERD).
-X A catalog of routes (paths and methods) that the API expects.
-X Set up and installation instructions for back end application
+√ Link to Entity Relationship Diagram (ERD).
+  ERD: 
+  
+  ![Imgur](https://imgur.com/KSkCcv2.png)
+
+√ A catalog of routes (paths and methods) that the API expects.
+  √ recipes/new
+      creates a new recipe
+  √ recipes/find-recipes
+      finds all recipes owned by the current user
+  √ recipes/delete/:userid/:id
+      deletes the selected recipes
+  √ recipes/update/:id
+      updates the recipes ingredients or steps
+
+√ Set up and installation instructions for back end application
+  √ Set Up:
+     Fork and clone repo
+     Navigate into repo
+     NPM install
+     Nodemon server.js
 
 Auth Specifications
 √ Signup with email, user, password, and password confirmation.
