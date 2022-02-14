@@ -41,7 +41,12 @@ onSignUp = (event) => {
     )
     .then(() => history.push('/'))
     .catch((error) => {
-      this.setState({ email: '', password: '', passwordConfirmation: '' })
+      this.setState({
+        email: '',
+        userName: '',
+        password: '',
+        passwordConfirmation: ''
+      })
       msgAlert({
         heading: 'Sign Up Failed with error: ' + error.message,
         message: signUpFailure,
