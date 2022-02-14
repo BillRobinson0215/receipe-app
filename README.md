@@ -49,8 +49,8 @@ meaningful sentence description of the application and link to the live URL gith
 
     Front End: https://billrobinson0215.github.io/receipe-app/
 
-    Back End: https://dashboard.heroku.com/apps/shrouded-meadow-94851
-    
+    Back End: https://shrouded-meadow-94851.herokuapp.com
+
   - List of technologies used
 
         √ Mongo DB
