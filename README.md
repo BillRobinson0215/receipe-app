@@ -3,13 +3,13 @@ Recipes.com is the easiest way to ditch that cook book and have your recipes eas
 
 ## Deployment
 
-X Be deployed online, where the rest of the world can access it.
+√ Be deployed online, where the rest of the world can access it.
 
 √ Host on your public Github page, not Github Enterprise.
 
-X Deploy client application on GH pages.
+√ Deploy client application on GH pages.
 
-X Deploy server application on Heroku.
+√ Deploy server application on Heroku.
 
 ## Version Control
 
@@ -41,8 +41,16 @@ Both front-end and back-end repos should include README's with:
 meaningful sentence description of the application and link to the live URL github image
 √ A link to the other repo
 
+    Front End Repo: https://github.com/BillRobinson0215/receipe-app
+
+    Back End Repo: https://github.com/BillRobinson0215/receipe-app-server
+
 √ A link to both deployed sites
 
+    Front End: https://billrobinson0215.github.io/receipe-app/
+
+    Back End: https://dashboard.heroku.com/apps/shrouded-meadow-94851
+    
   - List of technologies used
 
         √ Mongo DB
